@@ -20,7 +20,7 @@ app.post('/add',(req,res)=>{
     .catch(err=>res.json(err))
 
 })
-mongoose.connect('mongodb://127.0.0:27017/test01')
+mongoose.connect('mongodb://localhost:27017')
 .then(()=>{
     console.log('app connect to the database')
 })
