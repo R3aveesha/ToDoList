@@ -20,9 +20,12 @@ app.post('/add',(req,res)=>{
     .catch(err=>res.json(err))
 
 })
-app.get('/get',(req,res)=>{
-    
-})
+app.get('/get', (req, res) => {
+    todoModel.find()
+        .then(result => res.json(result)) 
+        .catch(err => res.status(500).json(err)); 
+});
+
 mongoose.connect('mongodb://localhost:27017')
 .then(()=>{
     console.log('app connect to the database')
