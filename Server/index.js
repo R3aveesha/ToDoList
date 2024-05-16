@@ -20,6 +20,9 @@ app.post('/add',(req,res)=>{
     .catch(err=>res.json(err))
 
 })
+app.get('/get',(req,res)=>{
+    
+})
 mongoose.connect('mongodb://localhost:27017')
 .then(()=>{
     console.log('app connect to the database')
