@@ -4,8 +4,7 @@ const TodoSchema = new mongoose.Schema({
     task: {
         type: String,
         required: true
-    },
-
+    }
 });
 
 const Todo = mongoose.model('Todo', TodoSchema);
