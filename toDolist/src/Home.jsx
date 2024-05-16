@@ -3,7 +3,6 @@ import Create from './create'
 
 function Home() {
     const [todos,setTodos]=useState([])
-
   return (
     <div>
       <h2>Todo List</h2>
