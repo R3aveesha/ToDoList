@@ -11,7 +11,7 @@ app.use(express.json())
 app.listen(3001,()=>{
     console.log('server is running')
 })
-app.post('/add',(req,res)=>{
+app.post('/add',(req,res)=>{ //add tasks
 
     const task=req.body.task;
     todoModel.create({
@@ -20,7 +20,12 @@ app.post('/add',(req,res)=>{
     .catch(err=>res.json(err))
 
 })
-mongoose.connect('mongodb://localhost:27017')
+app.get('/get',(req,res)=>{ //get tasks
+    todoModel.find()
+    .then(result=>res.json(result))
+    .catch(err=>res.json(err))
+})
+mongoose.connect('mongodb://localhost:27017')//connect to the database
 .then(()=>{
     console.log('app connect to the database')
 })
